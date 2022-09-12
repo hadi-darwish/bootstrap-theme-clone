@@ -227,6 +227,10 @@ textarea::placeholder {
   font-size: 1.5rem;
 }
 
+.content > svg {
+  font-size: 1.25rem;
+}
+
 @media only screen and (max-width: 992px) {
   .pictures > img {
     width: 50%;

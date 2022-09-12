@@ -143,14 +143,18 @@
 
 .text {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
 }
 
 .text > p {
-  width: 25%;
+  width: 100%;
   padding: 2vw;
   font-size: 3vh;
+}
+
+.about > h2 {
+  font-size: 3rem;
+  line-height: 2.5rem;
 }
 
 .about > button {
@@ -161,4 +165,22 @@
   color: white;
   border-color: white;
   background-color: #1abc9c;
+}
+
+@media only screen and (max-width: 992px) {
+  .pictures > img {
+    width: 50%;
+  }
+  .text {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .pictures > img {
+    width: 75%;
+  }
+  .text {
+    flex-direction: column;
+  }
 }

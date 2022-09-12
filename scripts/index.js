@@ -9,7 +9,7 @@ var error = "";
 send.onclick = () => {
   divider.style.display = "none";
   error = "";
-  if (!checkName()) {
+  if (!checkName() || !checkEmail()) {
     divider.style.display = "block";
     divider.innerHTML = error;
     return false;
@@ -25,5 +25,17 @@ function checkName() {
     return false;
   }
   fname.style.borderColor = "green";
+  return true;
+}
+//this function will check if name is valid
+//where this regex select an email with at least 3 characters before @ and 5 after
+function checkEmail() {
+  if (!/(^[\w-\.]{3,})+@(([\w-]{5,})+\.)+[\w-]{2,4}$/.test(email.value)) {
+    email.style.borderColor = "red";
+    error +=
+      "Please enter email with at least 3 characters before @ and 5 after!!<br>";
+    return false;
+  }
+  email.style.borderColor = "green";
   return true;
 }

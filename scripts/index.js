@@ -2,12 +2,13 @@ const send = document.getElementById("send");
 const fname = document.getElementById("fname");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
-const message = document.getElementById("message");
+const message = document.getElementsByTagName("textarea").item(0);
 const divider = document.getElementById("divider");
 var error = "";
 send.onclick = () => {
   divider.style.display = "none";
   error = "";
+  console.log(message);
   if (checkName() + checkEmail() + checkPhone() + checkMessage() != 0) {
     divider.style.display = "block";
     divider.innerHTML = error;
@@ -59,6 +60,7 @@ function checkMessage() {
     error += "Please enter a message of at least 100 char!!<br>";
     return 1;
   }
+
   message.style.borderColor = "green";
   return 0;
 }

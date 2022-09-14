@@ -14,10 +14,6 @@ async function loadIntoTable(url, table) {
     <td>${element.message}</td>
     `;
     tableBody.appendChild(row);
-
-    // element.forEach((e) => {
-
-    // });
   });
 }
 

@@ -4,8 +4,6 @@ async function loadIntoTable(url, table) {
   const data = await response.json();
   console.log(data);
   data.forEach((element) => {
-    // const row = document.createElement("tr");
-    // for
     const row = document.createElement("tr");
     row.innerHTML = `
     <td>${element.name}</td>

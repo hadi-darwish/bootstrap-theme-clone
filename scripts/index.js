@@ -18,6 +18,7 @@ send.onclick = () => {
 };
 
 form.addEventListener("submit", function (e) {
+  e.defaultPrevented;
   var data = new FormData(form);
 
   fetch("http://localhost/fswo5/contact-api/contact.php", {

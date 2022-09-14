@@ -227,6 +227,16 @@ textarea::placeholder {
   font-size: 1.5rem;
 }
 
+.contact input[type="submit"] {
+  width: 200px;
+  height: 50px;
+  border-style: none;
+  border-radius: 11px;
+  color: white;
+  background-color: #1abc9c;
+  font-size: 1.5rem;
+}
+
 .upper {
   padding-bottom: 5rem;
   background-color: #2c3e50;
@@ -281,6 +291,29 @@ textarea::placeholder {
   font-size: large;
   padding: 25px;
   display: none;
+}
+
+.table {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-collapse: collapse;
+  font-weight: bold;
+}
+
+.table thead th {
+  background-color: #1abc9c;
+  color: #fff;
+}
+.table td,
+.table th {
+  padding: 10px 20px;
+  word-wrap: break-word;
+}
+
+.table tbody tr:nth-of-type(even) {
+  background: #eeeeee;
+}
+.table tbody tr:last-of-type() {
+  border-bottom: 2px solid #1abc9c;
 }
 
 @media only screen and (max-width: 992px) {

@@ -3,6 +3,7 @@ const fname = document.getElementById("fname");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const message = document.getElementsByTagName("textarea").item(0);
+const form = document.querySelector("form");
 const divider = document.getElementById("divider");
 var error = "";
 send.onclick = () => {
@@ -15,6 +16,22 @@ send.onclick = () => {
     return false;
   }
 };
+
+form.addEventListener("submit", function (e) {
+  var data = new FormData(form);
+
+  fetch("http://localhost/fswo5/contact-api/contact.php", {
+    method: "POST",
+    body: new URLSearchParams({
+      fname: fname.value,
+      email: email.value,
+      phone: phone.value,
+      message: message.value,
+    }),
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data));
+});
 
 //this function will check if the name is valid
 //where this regex select a word of at least 5 letters without any additional characters
